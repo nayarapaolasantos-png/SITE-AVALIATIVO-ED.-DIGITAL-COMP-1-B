@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flor de Lótus | Pureza e Resiliência</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="accessibility-bar" aria-label="Controles de Acessibilidade">
+        <button onclick="changeFontSize('increase')" aria-label="Aumentar fonte">A+</button>
+        <button onclick="changeFontSize('decrease')" aria-label="Diminuir fonte">A-</button>
+        <button onclick="toggleContrast()" aria-label="Alternar Alto Contraste">Contraste</button>
+    </nav>
+
+    <header>
+        <nav aria-label="Menu Principal">
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#curiosidades">Curiosidades</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="reveal">
+            <h1>Flor de Lótus</h1>
+            <p>A beleza que emerge da lama.</p>
+        </section>
+
+        <section id="galeria" class="reveal" aria-labelledby="galeria-title">
+            <h2 id="galeria-title">Galeria de Espécies</h2>
+            <div id="grid-especies" class="grid-container"></div>
+        </section>
+
+        <section id="curiosidades" class="reveal">
+            <h2>Significados e Acordeões</h2>
+            <div id="accordion-container"></div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2024 Jornada da Lótus. Focado em Acessibilidade.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
