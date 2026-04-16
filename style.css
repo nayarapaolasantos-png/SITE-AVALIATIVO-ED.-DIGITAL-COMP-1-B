@@ -1,0 +1,86 @@
+/* --- VARIÁVEIS E CORES --- */
+:root {
+    --primary: #d4a5a5; /* Rosa Lótus */
+    --secondary: #3d5a44; /* Verde Folha */
+    --bg: #fdfaf6;
+    --text: #2d2d2d;
+    --radius: 12px;
+    --gap: 20px;
+    --transition: all 0.4s ease;
+}
+
+/* --- MODO ALTO CONTRASTE --- */
+body.high-contrast {
+    --bg: #000000;
+    --text: #ffff00;
+    --primary: #ffffff;
+    --secondary: #ffff00;
+}
+
+/* --- RESET & BASE --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    transition: var(--transition);
+}
+
+/* --- ACESSIBILIDADE BAR --- */
+.accessibility-bar {
+    position: sticky;
+    top: 0;
+    background: var(--secondary);
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    z-index: 1000;
+}
+
+/* --- GRID RESPONSIVO (MOBILE-FIRST) --- */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* 1 coluna no mobile */
+    gap: var(--gap);
+    padding: 20px;
+}
+
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas no desktop */
+    }
+}
+
+/* --- ANIMAÇÕES (REVEAL) --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- ACORDEÃO --- */
+.accordion-item {
+    border: 1px solid var(--primary);
+    margin-bottom: 10px;
+    border-radius: var(--radius);
+}
+.accordion-header {
+    padding: 15px;
+    cursor: pointer;
+    background: var(--primary);
+    color: white;
+    font-weight: bold;
+}
+.accordion-content {
+    display: none;
+    padding: 15px;
+}
+.accordion-item.open .accordion-content { display: block; }
